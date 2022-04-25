@@ -24,13 +24,14 @@ const Description = styled.p`
   padding-right: 2rem;
 `;
 
-const Card: React.FC<{ data: Post }> = ({ data }) => {
-  const { strCategory, strCategoryThumb, strCategoryDescription } = data;
+const FoodCard: React.FC<{ data: Post }> = ({ data }) => {
+  const { strCategory, strCategoryThumb, strCategoryDescription, idMeal } = data;
+
 
   return (
     <StyledCard
       onClick={(): void => {}}
-      to={`/category/${strCategory.toLowerCase()}`}
+      to={`/food/${idMeal}`}
     >
       <Image src={strCategoryThumb} alt={strCategory} />
       <Description>
@@ -41,4 +42,4 @@ const Card: React.FC<{ data: Post }> = ({ data }) => {
   );
 };
 
-export default Card;
+export default FoodCard;

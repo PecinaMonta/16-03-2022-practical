@@ -4,8 +4,6 @@ import { Post } from "../interfaces/interfaces";
 import ContentContainer from "../ContentContainer/ContentContainer"
 import Card from "../Card/Card";
 
-
-
 const HomePage:React.FC = () => {
     const [postData, setPostData] = useState<Post[] | null>(null)
 
@@ -19,7 +17,6 @@ const HomePage:React.FC = () => {
             // handle errors
         )
     }, [])
-
 
     return (
         <ContentContainer>

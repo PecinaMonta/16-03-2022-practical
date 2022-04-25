@@ -18,7 +18,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage/>} />
           <Route path="/category/:categoryName" element={<CategoryMeals/>} />
-          <Route path="/category/:foodId" element={<FoodFood/>} />
+          <Route path="/food/:foodId" element={<FoodFood/>} />
           <Route path="*" element={<div>404</div>} />
         </Routes> 
       </BrowserRouter>

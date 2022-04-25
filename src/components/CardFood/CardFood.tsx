@@ -3,6 +3,7 @@ import { Post } from "../interfaces/interfaces";
 
 
 const StyledCard = styled.div`
+    text-decoration: none;  
     height: 12rem;
     padding: 1rem;
     display: flex;
@@ -22,6 +23,9 @@ const Description = styled.p`
     overflow: hidden;
     
 `
+const Title = styled.h3`
+  color: black;
+`;
 
 const CardFood: React.FC<{data: Post}> = ({data}) => {
     const {strMeal, idMeal,  strMealThumb, strInstructions} = data;
@@ -30,10 +34,11 @@ const CardFood: React.FC<{data: Post}> = ({data}) => {
         <StyledCard>
             
             <Image src={strMealThumb} alt={strMeal}/>
+            <Title>{idMeal}</Title>
+                <Title>{strMeal}</Title>
+                <Title>{strMeal}</Title>
             <Description>
-                <h3>{idMeal}</h3>
-                <h3>{strMeal}</h3>
-                <h3>{strMeal}</h3>
+                
                 {strInstructions}
             </Description>
         </StyledCard>

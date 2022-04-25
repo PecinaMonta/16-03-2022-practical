@@ -3,6 +3,7 @@ import { Post } from "../interfaces/interfaces";
 import { Link} from "react-router-dom";
 
 const StyledCard = styled(Link)`
+    text-decoration: none;
     max-height: 19rem;
     display: flex;
     border: 1px solid black;
@@ -26,27 +27,30 @@ const Image = styled.img`
 
 const Description = styled.div`
     display: -webkit-box;
-    -webkit-line-clamp: ;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; 
     text-align: center; 
     overflow: hidden;
     max-width: 16rem;
     position: absolute;
     z-index: 2;
+    
 `
 const Title = styled.h3`
   color: black;
+  
 `;
 
 const Card: React.FC<{data: Post}> = ({data}) => {
     const {strMeal, strMealThumb, idMeal} = data;
     
     return (
-        <StyledCard onClick={():void => {}} to={`/category/${idMeal}`}>
+        <StyledCard onClick={():void => {}} to={`/food/${idMeal}`}>
             
             <Image src={strMealThumb} alt={strMeal}/>
+            <Title>{idMeal}</Title>
             <Description>
-                <Title>{idMeal}</Title>
+                
                 {strMeal}
             </Description>
         </StyledCard>
